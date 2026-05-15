@@ -4,12 +4,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 
-public class LionParameterizedTest {
+class LionParameterizedTest {
 
     static Stream<Arguments> setSexForLion() {
         return Stream.of(
@@ -22,8 +22,8 @@ public class LionParameterizedTest {
     @MethodSource("setSexForLion")
     @DisplayName("Проверка наличия гривы у льва")
     public void doesHaveMane_IsCorrect(String sex, boolean expectedHasMane) throws Exception {
-        Lion lion = new Lion(sex);
-
+        Predator mockPredator = mock(Predator.class);
+        Lion lion = new Lion(sex, mockPredator);
 
         assertEquals(expectedHasMane, lion.doesHaveMane());
     }
