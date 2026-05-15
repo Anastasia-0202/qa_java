@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
-public class LionParameterizedTest {
+class LionParameterizedTest {
 
     static Stream<Arguments> setSexForLion() {
         return Stream.of(

@@ -5,10 +5,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FelineTest {
+class FelineTest {
 
     @Test
-    public void getFamily_IsCorrect() {
+    public void getFamilyReturnsCorrectFamilyName() {
         String expectedFelineFamilyName = "Кошачьи";
         Feline feline = new Feline();
 
@@ -16,7 +16,7 @@ public class FelineTest {
     }
 
     @Test
-     void getKittens_DefaultIsCorrect() {
+    void getKittensReturnsDefaultCount() {
         int expectedCount = 3; // соответствует реализации Feline.getKittens()
         Feline feline = new Feline();
 
@@ -24,7 +24,7 @@ public class FelineTest {
     }
 
     @Test
-     void eatMeat_IsCorrect() throws Exception {
+    void eatMeatReturnsCorrectMeatList() throws Exception {
         Feline feline = new Feline();
         List<String> expectedMeat = List.of("Говядина", "Курица", "Рыба");
 
@@ -32,7 +32,7 @@ public class FelineTest {
     }
 
     @Test
-    void getFood_ForCarnivore_IsCorrect() throws Exception {
+    void getFoodForCarnivoreReturnsCorrectFoodList() throws Exception {
         Feline feline = new Feline();
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
 
@@ -40,7 +40,7 @@ public class FelineTest {
     }
 
     @Test
-     void getFood_ForHerbivore_IsCorrect() throws Exception {
+    void getFoodForHerbivoreReturnsCorrectFoodList() throws Exception {
         Feline feline = new Feline();
         List<String> expectedFood = List.of("Трава", "Различные растения");
 
@@ -48,7 +48,7 @@ public class FelineTest {
     }
 
     @Test
-     void getFood_WithUnknownType_ThrowsException() {
+    void getFoodWithUnknownTypeThrowsIllegalArgumentException() {
         Feline feline = new Feline();
 
         assertThrows(IllegalArgumentException.class, () -> {

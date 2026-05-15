@@ -22,7 +22,7 @@ class CatTest {
     }
 
     @Test
-    void getSound_IsCorrect() {
+    void getSoundReturnsCorrectSound() {
         String expectedSound = "Мяу";
         when(feline.getFamily()).thenReturn("Кошачьи");
 
@@ -30,7 +30,7 @@ class CatTest {
     }
 
     @Test
-    void getFood_IsCorrect() throws Exception {
+    void getFoodReturnsCorrectFoodList() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         when(feline.eatMeat()).thenReturn(expectedFood);
 
